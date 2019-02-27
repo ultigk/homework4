@@ -144,7 +144,6 @@
   <ItemGroup>
     <ClCompile Include="Calc.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Calc.h" />

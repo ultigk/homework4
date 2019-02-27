@@ -1,6 +1,9 @@
 
 #include <iostream>
 #include <cassert>
+#include "Calc.h"
+#include <cmath>
+#include <utility>
 
 
 #define ASSERT_EQUAL(x, y)                                         \
@@ -13,8 +16,6 @@
         fails_count++;                                             \
     }
 
-
-
 int Add(const int lhs, const int rhs)
 {
     return lhs + rhs;
@@ -23,6 +24,69 @@ int Add(const int lhs, const int rhs)
 int Sub(const int lhs, const int rhs)
 {
     return lhs - rhs;
+}
+
+int Div(const int lhs, const int rhs)
+{
+    return lhs / rhs;
+}
+
+int Multiply(const int lhs, const int rhs)
+{
+    return lhs * rhs;
+}
+
+int Expon(const int lhs, const int rhs)
+{
+    int temp_lhs = lhs;
+    if (rhs == 0)
+    {
+        return 1;
+    }
+
+    for (int i = 1; i < rhs; i++)
+    {
+        temp_lhs *= temp_lhs;
+    }
+    return temp_lhs;
+}
+
+int Sign(const int lhs, const int rhs)
+{
+    if (lhs * rhs > 0)
+    {
+        std::cout << "The signature is equal" << std::endl;
+        return 1;
+    }
+    else
+    {
+        std::cout << "The signature is not equal" << std::endl;
+        return 0;
+    }
+}
+
+int NOD(const int lhs, const int rhs)
+{
+    //std::cout << "Attention!! Euclid's algorithm is going on" << std::endl;
+    int temp_int_rhs = std::move(rhs);
+    int temp_int_lhs = std::move(lhs);
+    while (temp_int_lhs != temp_int_rhs)
+    {
+        if (temp_int_lhs > temp_int_rhs)
+        {
+            int temp_int = std::move(temp_int_lhs);
+            temp_int_lhs = std::move(temp_int_rhs);
+            temp_int_rhs = std::move(temp_int);
+        }
+        temp_int_rhs = std::move(temp_int_rhs - temp_int_lhs);
+    }
+    return temp_int_lhs;
+}
+
+int NOK(const int lhs, const int rhs)
+{
+    int temp_nod = NOD(lhs, rhs);
+    return lhs * rhs / temp_nod;
 }
 
 
