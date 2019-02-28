@@ -17,8 +17,9 @@ public:
     int Multiply(const int lhs, const int rhs);
     int Expon(const int lhs, const int rhs);
     int Sign(const int lhs, const int rhs);
-    int NOD(const int lhs, const int rhs);
-    int NOK(const int lhs, const int rhs);   
+    int GetGCD(const int lhs, const int rhs);
+    int GetLCM(const int lhs, const int rhs);   
+
 };
 
 
