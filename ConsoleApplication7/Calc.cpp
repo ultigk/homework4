@@ -27,6 +27,12 @@ int Calculator::Multiply(const int lhs, const int rhs)
 int Calculator::Expon(const int lhs, const int rhs)
 {
     int temp_lhs = lhs;
+
+    if (rhs < 0)
+    {
+        return 0;
+    }
+
     if (rhs == 0)
     {
         return 1;
@@ -73,6 +79,6 @@ int Calculator::GetGCD(const int lhs, const int rhs)
 
 int Calculator::GetLCM(const int lhs, const int rhs)
 {
-    int temp_nod = GetGCD(lhs, rhs);
+    int temp_nod = this->GetGCD(lhs, rhs);
     return lhs * rhs / temp_nod;
 }
