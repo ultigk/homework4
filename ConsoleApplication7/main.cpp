@@ -5,7 +5,7 @@
 #include <cmath>
 #include <utility>
 
-enum function {Add_, Sub_, Div_, Multiply_, Expon_, Sign_, GetGCD_, GetLCM_};
+enum function {Add_, Sub_, Div_, Multiply_, Expon_, CheckSignsEquivalence_, GetGCD_, GetLCM_};
 
 
 #define ASSERT_EQUAL(x, y)                                         \
@@ -38,7 +38,7 @@ int main()
     std::cout << "Input 2 to call Div function" << std::endl;
     std::cout << "Input 3 to call Multiply function" << std::endl;
     std::cout << "Input 4 to call Expon function" << std::endl;
-    std::cout << "Input 5 to call Sign function" << std::endl;
+    std::cout << "Input 5 to call CheckSignsEquivalence function" << std::endl;
     std::cout << "Input 6 to call GetGCD function" << std::endl;
     std::cout << "Input 7 to call GetLCM function" << std::endl;
     std::cin >> case_number;
@@ -75,9 +75,9 @@ int main()
             break;
         }
 
-        case Sign_:
+        case CheckSignsEquivalence_:
         {
-            std::cout << counter.Sign(number1, number2) << std::endl;
+            std::cout << counter.CheckSignsEquivalence(number1, number2) << std::endl;
             break;
         }
 

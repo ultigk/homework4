@@ -16,7 +16,7 @@ public:
     int Div(const int lhs, const int rhs);
     int Multiply(const int lhs, const int rhs);
     int Expon(const int lhs, const int rhs);
-    int Sign(const int lhs, const int rhs);
+    int CheckSignsEquivalence(const int lhs, const int rhs);
     int GetGCD(const int lhs, const int rhs);
     int GetLCM(const int lhs, const int rhs);   
 
