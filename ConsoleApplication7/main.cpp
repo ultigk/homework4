@@ -8,7 +8,7 @@
 enum function {Add_, Sub_, Div_, Multiply_, Expon_, CheckSignsEquivalence_, GetGCD_, GetLCM_};
 
 
-#define ASSERT_EQUAL(x, y)                                         \
+/*#define ASSERT_EQUAL(x, y)                                         \
     if ((x) != (y))                                                \
     {                                                              \
         std::cerr << "Assertion failed. File: " << __FILE__        \
@@ -16,7 +16,7 @@ enum function {Add_, Sub_, Div_, Multiply_, Expon_, CheckSignsEquivalence_, GetG
             << x << " != " << y << " ("                            \
             << #x << " != " << #y << ")" << std::endl;             \
         fails_count++;                                             \
-    }
+    }*/
 
 int main()
 {
