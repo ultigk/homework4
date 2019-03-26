@@ -38,11 +38,12 @@ int Calculator::Expon(const int lhs, const int rhs)
         return 1;
     }
 
-    for (int i = 1; i < rhs; i++)
+    int start_temp_lhs = 1;
+    for (int i = 0; i < rhs; i++)
     {
-        temp_lhs *= temp_lhs;
+        start_temp_lhs *= temp_lhs;
     }
-    return temp_lhs;
+    return start_temp_lhs;
 }
 
 int Calculator::CheckSignsEquivalence(const int lhs, const int rhs)
@@ -59,9 +60,8 @@ int Calculator::CheckSignsEquivalence(const int lhs, const int rhs)
 
 int Calculator::GetGCD(const int lhs, const int rhs)
 {
-    //std::cout << "Attention!! Euclid's algorithm is going on" << std::endl;
-    int temp_int_rhs = rhs;
-    int temp_int_lhs = lhs;
+    int temp_int_rhs = abs(rhs);
+    int temp_int_lhs = abs(lhs);
     while (temp_int_lhs != temp_int_rhs)
     {
         if (temp_int_lhs > temp_int_rhs)
@@ -77,10 +77,12 @@ int Calculator::GetGCD(const int lhs, const int rhs)
 
 int Calculator::GetLCM(const int lhs, const int rhs)
 {
-    int max = rhs;
+    int temp_int_rhs = abs(rhs);
+    int temp_int_lhs = abs(lhs);
+    int max = temp_int_rhs;
     for (int i = max; i > 0; i++) 
     {
-        if ((i % lhs == 0) && (i % rhs == 0)) 
+        if ((i % temp_int_lhs == 0) && (i % temp_int_rhs == 0)) 
         {
             return i;
         }

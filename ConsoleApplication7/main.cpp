@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cassert>
 #include "Calc.h"
+#include "Test.h"
 #include <cmath>
 #include <utility>
 
@@ -18,10 +19,11 @@ enum function {Add_, Sub_, Div_, Multiply_, Expon_, CheckSignsEquivalence_, GetG
         fails_count++;                                             \
     }*/
 
+
 int main()
 {
-    // function funct_mean = Add;
     Calculator counter;
+    TestAllFunctions();
     int case_number = 0;
     int number1 = 0;
     int number2 = 0;

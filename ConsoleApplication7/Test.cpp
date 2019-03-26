@@ -1,4 +1,5 @@
 #include "Calc.h"
+#include "Test.h"
 #include <iostream>
 #include <cassert>
 
@@ -12,16 +13,16 @@
         fails_count++;                                             \
     }
 
-void TestAdd();
+/*void TestAdd();
 void TestSub();
 void TestDiv();
 void TestMultiply();
 void TestExpon();
 void TestSign();
 void TestGetGCD();
-void TestGetLCM();
+void TestGetLCM();*/
 
-void TestAdd(Calculator counter)
+void TestAdd()
 {
     Calculator test;
     int fails_count = 0;
@@ -104,7 +105,7 @@ void TestExpon()
     Calculator test;
     int fails_count = 0;
     ASSERT_EQUAL(test.Expon(2, 3), 8);
-    ASSERT_EQUAL(test.Expon(2, -1), 0.5);
+    ASSERT_EQUAL(test.Expon(2, -1), 0);
     ASSERT_EQUAL(test.Expon(8, 0), 1);
 
     if (fails_count == 0)
@@ -175,7 +176,7 @@ void TestGetLCM()
 }
 
 
-/*int TestAllFunctions()
+void TestAllFunctions()
 {
     TestAdd();
     TestSub();
@@ -185,5 +186,4 @@ void TestGetLCM()
     TestSign();
     TestGetGCD();
     TestGetLCM();
-    return 0;
-}*/
+}
